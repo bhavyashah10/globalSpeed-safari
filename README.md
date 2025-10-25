@@ -14,17 +14,40 @@ A Safari port of [Global Speed](https://github.com/polywock/globalSpeed) - a pow
 
 ## Installation Steps
 
-### 1. Install Xcode
+### 1. Create a Free Apple Developer Account
+
+#### Step 1: Sign in to the Apple Developer Website
+- Visit [https://developer.apple.com](https://developer.apple.com)
+- Click **Account** (top-right corner)
+- Sign in with your Apple ID.
+
+#### Step 2: Agree to the Developer Agreement
+- After signing in, you’ll see a prompt to **review and accept** the Apple Developer Agreement.
+- Read and click **Agree**.
+
+#### Step 3: Access the Free Developer Resources
+Once you’ve accepted the agreement:
+- You now have a **free Apple Developer account**.  
+- You can access:
+  - Xcode developer tools
+  - Documentation
+  - Sample code
+  - Developer forums
+
+> **Note**: To **distribute apps** / **publish apps** on the App Store requires a paid membership.
+
+
+### 2. Install Xcode
 
 1. Open the Mac App Store
 2. Search for "Xcode" and install it
 3. Open Xcode once to accept the license agreement
 
-### 2. Directly use `build/unpacked` from this Repository
+### 3. Directly use `build/unpacked` from this Repository
 
 OR
 
-### 2. Clone the Original Global Speed Repository and Install Dependencies and Build
+### 3. Clone the Original Global Speed Repository and Install Dependencies and Build
 
 ```bash
 git clone https://github.com/polywock/globalSpeed.git
@@ -36,7 +59,7 @@ npm run build:prod
 
 This will create a `build/unpacked` folder with the compiled extension.
 
-### 3. Convert to Safari Extension
+### 4. Convert to Safari Extension
 
 Use Apple's conversion tool to create a Safari-compatible extension:
 
@@ -145,27 +168,9 @@ Then rebuild in Xcode.
 - Restart Safari completely (`Cmd + Q`, then reopen)
 - Check that both targets are signed in Xcode
 
-**Keychain keeps asking for password:**
-- Click "Always Allow" instead of "Allow"
-- Open Keychain Access app → find "Apple Development" certificate → Access Control → "Allow all applications to access this item"
-
 **Build errors about iOS:**
 - Select each target in Xcode
 - Make sure only macOS is selected in "Supported Destinations"
-
-## File Structure (After Conversion)
-
-```
-Global Speed/
-├── Global Speed.xcodeproj          # Xcode project file
-├── Global Speed/                    # Main app wrapper
-│   ├── AppDelegate.swift
-│   ├── ViewController.swift
-│   └── ...
-└── Global Speed Extension/          # Safari extension
-    ├── Resources/                   # Extension files (copied from build/unpacked)
-    └── SafariWebExtensionHandler.swift
-```
 
 
 ## Credits
