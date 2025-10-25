@@ -102,12 +102,16 @@ In Xcode:
 When building, macOS will ask for your password multiple times:
 - **Always click "Always Allow"** (not just "Allow")
 - This prevents the popup from appearing repeatedly
-
-If this does not work then try:
+- If this does not work then try:
 
 ```bash
 security unlock-keychain ~/Library/Keychains/login.keychain-db
 ```
+- After the build is completed, lock the Keychain manually again using 
+```bash
+security lock-keychain ~/Library/Keychains/login.keychain-db
+```
+
 
 ### 8. Build and Run
 
